@@ -35,6 +35,7 @@ func (s *ServerConn) getSshConnect() (*ssh.Client, error) {
 	}
 	config := ssh.ClientConfig{
 		User: s.user,
+		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
 
 	keys := []ssh.Signer{}
